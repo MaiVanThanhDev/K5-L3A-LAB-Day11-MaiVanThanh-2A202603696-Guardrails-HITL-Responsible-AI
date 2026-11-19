@@ -1,0 +1,36 @@
+{
+  "total_requests": 37,
+  "blocked_requests": 19,
+  "block_rate": 0.5135135135135135,
+  "rate_limit_hits": 5,
+  "judge_checks": 0,
+  "judge_fails": 0,
+  "judge_fail_rate": 0.0,
+  "alerts": [
+    {
+      "metric": "block_rate",
+      "value": 0.514,
+      "threshold": 0.5,
+      "message": "Block rate 51% > 50%: possible attack campaign or over-blocking — review audit log."
+    },
+    {
+      "metric": "rate_limit_hits",
+      "value": 5,
+      "threshold": 5,
+      "message": "5 rate-limit hits (>= 5): possible flooding / cost attack."
+    }
+  ],
+  "blocked_by_layer": {
+    "input_guardrail:injection": 6,
+    "input_guardrail:secret_request": 1,
+    "input_guardrail:obfuscated_injection": 2,
+    "rate_limiter": 5,
+    "input_guardrail:input_sanity": 3,
+    "input_guardrail:topic": 2
+  },
+  "thresholds": {
+    "block_rate": 0.5,
+    "rate_limit_hits": 5,
+    "judge_fail_rate": 0.3
+  }
+}
